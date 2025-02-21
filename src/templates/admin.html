@@ -1,0 +1,27 @@
+{% extends './layout.html' %}
+
+{% block title %} Admin {% endblock %}
+
+{% block body %}
+<h1>Bienvenido {{ current_user.username }}</h1>
+<a href="/logout">Cerrar Sesion</a>
+
+{% for usuario in usuarios %}
+<div>
+    <p>{{ usuario.imagen }}</p>
+    <p>{{ usuario.descripcion }}</p>
+    <a href="/crud_update/{{ usuario.id_coche }}"></a>
+    <a href="/crud_delete/{{ usuario.id_coche }}"></a>
+</div>
+<div>
+    <p>{{ usuario.coche.imagen }}</p>
+    <p>{{ usuario.coche.descripcion }}</p>
+    <p>Propiedad de {{ usuario.id }}</p>
+    <a href="/crud_update/{{ usuario.coche.id_coche }}"></a>
+    <a href="/crud_delete/{{ usuario.coche.id_coche }}"></a>
+
+</div>
+{% endfor %}
+<a href="/crud_añadir">Añadir Coche</a>
+
+{% endblock %}

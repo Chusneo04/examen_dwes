@@ -1,0 +1,14 @@
+{% extends './layout.html' %}
+
+{% block title %} Register {% endblock %}
+
+{% block body %}
+<h1>Formulario de Registro</h1>
+<form method="post">
+    <input type="username" placeholder="Nombre de Usuario" name="username">
+    <input type="email" placeholder="Correo Electronico" name="email">
+    <input type="password" placeholder="Contraseña" name="password">
+    <button type="submit">Registrar</button>
+</form>
+
+{% endblock %}
